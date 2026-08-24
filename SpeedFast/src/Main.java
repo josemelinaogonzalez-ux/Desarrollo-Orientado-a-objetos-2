@@ -2,36 +2,41 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Pedido comida = new PedidoComida(
+        PedidoComida comida = new PedidoComida(
                 1,
-                "Avenida Los Lagos 123",
-                "Comida"
+                "Av. Los Lagos 123",
+                4.0
         );
 
-        Pedido encomienda = new PedidoEncomienda(
+        PedidoEncomienda encomienda = new PedidoEncomienda(
                 2,
-                "Calle Puerto 456",
-                "Encomienda"
+                "Calle Puerto Montt 456",
+                6.0
         );
 
-        Pedido express = new PedidoExpress(
+        PedidoExpress express = new PedidoExpress(
                 3,
-                "Avenida Central 789",
-                "Express"
+                "Av. Austral 789",
+                8.0
         );
 
-        System.out.println("=== SPEEDFAST ===");
+        System.out.println("=== PEDIDO COMIDA ===");
+        comida.mostrarResumen();
+        System.out.println("Tiempo estimado: "
+                + comida.calcularTiempoEntrega() + " minutos");
 
-        System.out.println("\nPedido de comida:");
-        comida.asignarRepartidor();
-        comida.asignarRepartidor("Juan");
+        System.out.println();
 
-        System.out.println("\nPedido de encomienda:");
-        encomienda.asignarRepartidor();
-        encomienda.asignarRepartidor("Pedro");
+        System.out.println("=== PEDIDO ENCOMIENDA ===");
+        encomienda.mostrarResumen();
+        System.out.println("Tiempo estimado: "
+                + encomienda.calcularTiempoEntrega() + " minutos");
 
-        System.out.println("\nPedido express:");
-        express.asignarRepartidor();
-        express.asignarRepartidor("Carlos");
+        System.out.println();
+
+        System.out.println("=== PEDIDO EXPRESS ===");
+        express.mostrarResumen();
+        System.out.println("Tiempo estimado: "
+                + express.calcularTiempoEntrega() + " minutos");
     }
 }
