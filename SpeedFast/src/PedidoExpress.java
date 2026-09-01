@@ -14,4 +14,10 @@ public class PedidoExpress extends Pedido {
 
         return tiempo;
     }
+
+    @Override
+    public void asignarRepartidor() {
+        repartidor = "Repartidor express";
+        System.out.println("Repartidor asignado automáticamente: " + repartidor);
+    }
 }
